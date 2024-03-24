@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shimmerContainerNative"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_native_ads"
+    app:shimmer_auto_start="true"
+    app:shimmer_base_color="#ccc"
+    android:padding="@dimen/_10sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ad_app_icon"
+                        android:layout_width="@dimen/_37sdp"
+                        android:layout_height="@dimen/_37sdp"
+                        android:adjustViewBounds="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@tools:sample/avatars" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:background="@drawable/custombg_bg_text_ad"
+                    android:paddingHorizontal="@dimen/_4sdp"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text="Ad"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_7ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/cardV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ad_headline"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:ellipsize="end"
+                    android:background="#E1E1E1"
+                    android:maxLines="1"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/textView4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/ad_advertiser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:background="#E1E1E1"
+                    android:lines="2"
+                    android:maxLength="90"
+                    android:maxLines="2"
+                    android:textColor="#43494E"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/ad_headline"
+                    app:layout_constraintStart_toStartOf="@id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/ad_headline"
+                     />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.gms.ads.nativead.MediaView
+                android:id="@+id/ad_media"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#E1E1E1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout4" />
+
+            <TextView
+                android:id="@+id/ad_body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:background="#E1E1E1"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="#43494E"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ad_media"
+                 />
+
+            <TextView
+                android:id="@+id/ad_call_to_action"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:background="@drawable/bg_border_circle"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ad_body"
+                tools:text="sign up" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

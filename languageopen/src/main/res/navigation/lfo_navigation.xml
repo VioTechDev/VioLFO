@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lfo_navigation"
+    app:startDestination="@id/LFOFragment">
+
+    <fragment
+        android:id="@+id/LFOFragment"
+        android:name="com.ltl.apero.languageopen.language.fragment.LFOFragment"
+        android:label="LFOFragment" >
+        <action
+            android:id="@+id/action_LFOFragment_to_LFOAccessFragment"
+            app:destination="@id/LFOAccessFragment">
+        </action>
+        <action
+            android:id="@+id/action_LFOFragment_to_LFOSelectFragment"
+            app:destination="@id/LFOSelectFragment">
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/LFOAccessFragment"
+        android:name="com.ltl.apero.languageopen.language.fragment.LFOAccessFragment"
+        android:label="LFOAccessFragment" >
+        <action
+            android:id="@+id/action_LFOAccessFragment_to_LFOSelectFragment"
+            app:destination="@id/LFOSelectFragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/LFOSelectFragment"
+        android:name="com.ltl.apero.languageopen.language.fragment.LFOSelectFragment"
+        android:label="LFOSelectFragment" >
+        <action
+            android:id="@+id/action_LFOSelectFragment_to_LFOAccessFragment"
+            app:destination="@id/LFOAccessFragment" >
+        </action>
+    </fragment>
+</navigation>

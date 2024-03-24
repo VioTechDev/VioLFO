@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="backgroundColor" format="color"/>
+    <attr name="backgroundToolbarColor" format="color"/>
+    <attr name="textColor" format="color"/>
+    <attr name="iconColor" format="color"/>
+    <attr name="strokeColor" format="color"/>
+
+    <declare-styleable
+        name="Toggle">
+
+        <attr
+            name="textOn"
+            format="string"/>
+
+        <attr
+            name="textOff"
+            format="string"/>
+
+        <attr
+            name="colorOff"
+            format="color"/>
+        <attr
+            name="colorTextOn"
+            format="color"/>
+        <attr
+            name="colorTextOff"
+            format="color"/>
+
+        <attr
+            name="colorOn"
+            format="color"/>
+
+        <attr
+            name="colorBorder"
+            format="color"/>
+
+        <attr
+            name="colorDisabled"
+            format="color"/>
+
+        <attr name="on"
+            format="boolean"/>
+
+        <attr name="android:textSize"/>
+
+        <attr name="android:enabled"/>
+    </declare-styleable>
+</resources>
