@@ -17,21 +17,23 @@ private fun getLanguageDevice(languageList: MutableList<Language>): Language? {
 }
 
 fun MutableList<Language>.getHandleListLanguage(
-    languageCodeDefault: String,
+    languageCodeDefault: String?,
     positionLanguageDevice: Int
 ): List<Language> {
-    val language = this.find { it.code == languageCodeDefault }
-    language?.let {
-        this.remove(it)
-        it.isChoose = true
-        this.add(0, it)
-    }
-    getLanguageDevice(this)?.let {
-        if (it.code != languageCodeDefault) {
-            this.remove(it)
-            this.add(positionLanguageDevice, it)
+    languageCodeDefault?.let { code ->
+        this.find { it.code == code }?.isChoose = true
+    } ?: run {
+        this.firstOrNull()?.isChoose = true
+        getLanguageDevice(this)?.let {
+            val indexLanguage = this.indexOfLast { language ->
+                language.code == it.code
+            }
+            if (indexLanguage > positionLanguageDevice) {
+                this.remove(it)
+                this.add(positionLanguageDevice, it)
+            }
+            it.isSystem = true
         }
-        it.isSystem = true
     }
     return this
 }
