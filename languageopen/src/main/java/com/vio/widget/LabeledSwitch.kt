@@ -1,4 +1,4 @@
-package com.ltl.apero.languageopen.language.widget
+package com.vio.widget
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -13,7 +13,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.animation.AccelerateDecelerateInterpolator
 import com.ltl.apero.languageopen.R
-import com.ltl.apero.languageopen.language.model.ToggleableView
+import com.vio.model.ToggleableView
 
 /**
  *

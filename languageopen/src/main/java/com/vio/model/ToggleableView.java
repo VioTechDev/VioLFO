@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.ltl.apero.languageopen.language.model;
+package com.vio.model;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewDebug;
 
-import com.ltl.apero.languageopen.language.listener.OnToggledListener;
+import com.vio.listener.OnToggledListener;
 
 
 /**

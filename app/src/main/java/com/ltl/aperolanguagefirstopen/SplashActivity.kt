@@ -3,10 +3,10 @@ package com.ltl.aperolanguagefirstopen
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.ltl.apero.languageopen.language.VioLFO
-import com.ltl.apero.languageopen.language.LFOConfig
-import com.ltl.apero.languageopen.language.listener.LFOCallBack
-import com.ltl.apero.languageopen.language.model.Language
+import com.vio.VioLFO
+import com.vio.LFOConfig
+import com.vio.listener.LFOCallBack
+import com.vio.model.Language
 
 class SplashActivity : AppCompatActivity(), LFOCallBack {
     companion object {

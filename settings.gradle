@@ -22,14 +22,6 @@ dependencyResolutionManagement {
             url "https://jitpack.io"
         }
         maven {
-            credentials {
-                username "reporeader"
-                password "apero@123"
-            }
-            url 'https://artifactory.apero.vn/artifactory/gradle-release/'
-        }
-
-        maven {
             url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
         }
         maven {

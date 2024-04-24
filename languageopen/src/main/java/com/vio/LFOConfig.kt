@@ -1,8 +1,8 @@
-package com.ltl.apero.languageopen.language
+package com.vio
 
 import androidx.annotation.LayoutRes
 import com.ltl.apero.languageopen.R
-import com.ltl.apero.languageopen.language.model.Language
+import com.vio.model.Language
 
 class LFOConfig private constructor(
     val idNativeLFO1: String,

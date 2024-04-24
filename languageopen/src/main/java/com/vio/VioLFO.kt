@@ -1,12 +1,12 @@
-package com.ltl.apero.languageopen.language
+package com.vio
 
 import android.content.Context
 import android.content.Intent
 import com.ltl.apero.languageopen.R
-import com.ltl.apero.languageopen.language.extention.getHandleListLanguage
-import com.ltl.apero.languageopen.language.listener.LFOCallBack
-import com.ltl.apero.languageopen.language.model.Language
-import com.ltl.apero.languageopen.language.utils.LFONativeUtils
+import com.vio.extention.getHandleListLanguage
+import com.vio.listener.LFOCallBack
+import com.vio.model.Language
+import com.vio.utils.LFONativeUtils
 import java.util.concurrent.CopyOnWriteArrayList
 
 /**
@@ -26,7 +26,7 @@ object VioLFO {
      * @param adCallback: An implementation of LFOCallBack interface to handle language change events.
      * */
     fun registerAdListener(adCallback: LFOCallBack) {
-        this.listLFOCallback.add(adCallback)
+        listLFOCallback.add(adCallback)
     }
 
     /**
@@ -34,14 +34,14 @@ object VioLFO {
      * @param adCallback: An implementation of LFOCallBack interface to handle language change events.
      * */
     fun unregisterAdListener(adCallback: LFOCallBack) {
-        this.listLFOCallback.remove(adCallback)
+        listLFOCallback.remove(adCallback)
     }
 
     /**
      * Unregisters all language change listeners.
      * */
     fun unregisterAllAdListener() {
-        this.listLFOCallback.clear()
+        listLFOCallback.clear()
     }
 
     /**
@@ -79,7 +79,7 @@ object VioLFO {
      * @param lfoConfig : The configuration for Language Feature Options.
      * */
     fun initLFO(context: Context, lfoConfig: LFOConfig) {
-        this.lfoConfig = lfoConfig
+        VioLFO.lfoConfig = lfoConfig
         listLanguageValid =
             (lfoConfig.listLanguage as MutableList<Language>).getHandleListLanguage(
                 lfoConfig.languageCodeDefault,

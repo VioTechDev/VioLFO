@@ -9,7 +9,7 @@
 
     <application>
         <activity
-            android:name=".language.LFOActivity"
+            android:name="com.vio.LFOActivity"
             android:screenOrientation="portrait"
             android:theme="@style/LightTheme"
             android:launchMode="singleTask"

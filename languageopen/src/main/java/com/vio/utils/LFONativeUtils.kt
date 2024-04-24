@@ -1,4 +1,4 @@
-package com.ltl.apero.languageopen.language.utils
+package com.vio.utils
 
 import android.content.Context
 import android.util.Log
@@ -10,7 +10,7 @@ import com.ads.admob.listener.NativeAdCallback
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.LoadAdError
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.ltl.apero.languageopen.language.VioLFO
+import com.vio.VioLFO
 
 internal object LFONativeUtils {
     private val TAG = LFONativeUtils::class.simpleName

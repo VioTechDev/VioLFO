@@ -1,10 +1,10 @@
-package com.ltl.apero.languageopen.language
+package com.vio
 
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.ltl.apero.languageopen.databinding.ActivityLfoBinding
-import com.ltl.apero.languageopen.language.extention.lightStatusBar
+import com.vio.extention.lightStatusBar
 
 
 class LFOActivity : BaseFLO() {

@@ -1,4 +1,4 @@
-package com.ltl.apero.languageopen.language
+package com.vio
 
 import android.app.Activity
 import android.content.Context
@@ -15,9 +15,9 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.ltl.apero.languageopen.R
 import com.ltl.apero.languageopen.databinding.FragmentLfoBinding
-import com.ltl.apero.languageopen.language.adapter.LFOAdapter
-import com.ltl.apero.languageopen.language.model.Language
-import com.ltl.apero.languageopen.language.utils.LfoConstants
+import com.vio.adapter.LFOAdapter
+import com.vio.model.Language
+import com.vio.utils.LfoConstants
 
 
 abstract class BaseLFOFragment : Fragment() {

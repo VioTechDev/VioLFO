@@ -1,10 +1,10 @@
-package com.ltl.apero.languageopen.language.extention
+package com.vio.extention
 
 import android.app.Activity
 import android.content.res.Resources
 import android.os.Build
 import androidx.core.view.WindowInsetsControllerCompat
-import com.ltl.apero.languageopen.language.model.Language
+import com.vio.model.Language
 
 
 private fun getLanguageDevice(languageList: MutableList<Language>): Language? {

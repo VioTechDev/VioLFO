@@ -1,4 +1,4 @@
-package com.ltl.apero.languageopen.language.model
+package com.vio.model
 
 data class Language(
     var code: String,

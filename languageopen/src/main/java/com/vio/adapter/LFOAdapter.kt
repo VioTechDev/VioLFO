@@ -1,4 +1,4 @@
-package com.ltl.apero.languageopen.language.adapter
+package com.vio.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,9 +9,9 @@ import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.ltl.apero.languageopen.R
-import com.ltl.apero.languageopen.language.VioLFO
-import com.ltl.apero.languageopen.language.listener.LFOSelectLanguage
-import com.ltl.apero.languageopen.language.model.Language
+import com.vio.VioLFO
+import com.vio.listener.LFOSelectLanguage
+import com.vio.model.Language
 
 class LFOAdapter(
     private val context: Context,

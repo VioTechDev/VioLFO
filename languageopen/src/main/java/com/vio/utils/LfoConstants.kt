@@ -1,4 +1,4 @@
-package com.ltl.apero.languageopen.language.utils
+package com.vio.utils
 
 object LfoConstants {
     const val KEY_OPEN_FROM_MAIN = "open_from_main"

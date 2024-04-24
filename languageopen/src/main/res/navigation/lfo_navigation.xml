@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/LFOFragment"
-        android:name="com.ltl.apero.languageopen.language.fragment.LFOFragment"
+        android:name="com.vio.fragment.LFOFragment"
         android:label="LFOFragment" >
         <action
             android:id="@+id/action_LFOFragment_to_LFOAccessFragment"
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/LFOAccessFragment"
-        android:name="com.ltl.apero.languageopen.language.fragment.LFOAccessFragment"
+        android:name="com.vio.fragment.LFOAccessFragment"
         android:label="LFOAccessFragment" >
         <action
             android:id="@+id/action_LFOAccessFragment_to_LFOSelectFragment"
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/LFOSelectFragment"
-        android:name="com.ltl.apero.languageopen.language.fragment.LFOSelectFragment"
+        android:name="com.vio.fragment.LFOSelectFragment"
         android:label="LFOSelectFragment" >
         <action
             android:id="@+id/action_LFOSelectFragment_to_LFOAccessFragment"

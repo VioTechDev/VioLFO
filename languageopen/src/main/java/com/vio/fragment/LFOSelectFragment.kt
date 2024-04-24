@@ -1,4 +1,4 @@
-package com.ltl.apero.languageopen.language.fragment
+package com.vio.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -12,12 +12,12 @@ import com.ads.admob.listener.NativeAdCallback
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.LoadAdError
 import com.ltl.apero.languageopen.R
-import com.ltl.apero.languageopen.language.VioLFO
-import com.ltl.apero.languageopen.language.BaseLFOFragment
-import com.ltl.apero.languageopen.language.listener.LFOSelectLanguage
-import com.ltl.apero.languageopen.language.model.Language
-import com.ltl.apero.languageopen.language.utils.LFONativeUtils
-import com.ltl.apero.languageopen.language.utils.LfoConstants
+import com.vio.VioLFO
+import com.vio.BaseLFOFragment
+import com.vio.listener.LFOSelectLanguage
+import com.vio.model.Language
+import com.vio.utils.LFONativeUtils
+import com.vio.utils.LfoConstants
 
 class LFOSelectFragment : BaseLFOFragment(), LFOSelectLanguage {
 
