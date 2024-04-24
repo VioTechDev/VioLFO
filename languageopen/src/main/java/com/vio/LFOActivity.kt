@@ -3,8 +3,8 @@ package com.vio
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
-import com.ltl.apero.languageopen.databinding.ActivityLfoBinding
 import com.vio.extention.lightStatusBar
+import com.vio.languageopen.databinding.ActivityLfoBinding
 
 
 class LFOActivity : BaseFLO() {

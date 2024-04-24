@@ -1,7 +1,7 @@
 package com.vio
 
 import androidx.annotation.LayoutRes
-import com.ltl.apero.languageopen.R
+import com.vio.languageopen.R
 import com.vio.model.Language
 
 class LFOConfig private constructor(

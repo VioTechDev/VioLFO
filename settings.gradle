@@ -29,6 +29,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "Apero Language First Open"
+rootProject.name = "ViO LFO"
 include ':app'
 include ':languageopen'

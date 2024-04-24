@@ -2,8 +2,8 @@ package com.vio
 
 import android.content.Context
 import android.content.Intent
-import com.ltl.apero.languageopen.R
 import com.vio.extention.getHandleListLanguage
+import com.vio.languageopen.R
 import com.vio.listener.LFOCallBack
 import com.vio.model.Language
 import com.vio.utils.LFONativeUtils
@@ -74,7 +74,7 @@ object VioLFO {
     }
 
     /**
-     * Initializes the AperoLFO module with the provided LFOConfig instance and sets up valid language options.
+     * Initializes the ViOLFO module with the provided LFOConfig instance and sets up valid language options.
      * @param context : The application context.
      * @param lfoConfig : The configuration for Language Feature Options.
      * */

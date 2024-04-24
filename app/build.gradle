@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.ltl.aperolanguagefirstopen"
+        applicationId "com.ltl.languagefirstopen"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -46,7 +46,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-//    implementation 'apero:language.first.open:1.0.1@aar'
     implementation 'com.google.android.gms:play-services-ads:20.4.0'
 
     implementation 'androidx.multidex:multidex:2.0.1'

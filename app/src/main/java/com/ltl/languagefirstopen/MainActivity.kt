@@ -1,4 +1,4 @@
-package com.ltl.aperolanguagefirstopen
+package com.ltl.languagefirstopen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -7,7 +7,7 @@ plugins {
 
 android {
     compileSdkVersion 33
-    namespace 'com.ltl.apero.languageopen'
+    namespace 'com.vio.languageopen'
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 33
@@ -36,34 +36,6 @@ android {
         checkReleaseBuilds false
         //If you want to continue even if errors found use following line
         abortOnError false
-    }
-
-}
-
-publishing {
-    publications {
-        aar(MavenPublication) {
-            artifactId "language.first.open"
-            artifact "${project.buildDir}/outputs/aar/languageopen-release.aar"
-
-            //The publication doesn't know about our dependencies, so we have to manually add them to the pom
-            pom {
-                // Old artifact coordinates
-                groupId = "apero"
-                artifactId = "language.first.open"
-                version = "2.2.0-alpha04"
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            url 'https://artifactory.apero.vn/artifactory/gradle-release/'
-            credentials {
-                username "deployer"
-                password "apero@123"
-            }
-        }
     }
 
 }

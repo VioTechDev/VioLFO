@@ -11,9 +11,9 @@ import com.ads.admob.helper.adnative.params.NativeAdParam
 import com.ads.admob.listener.NativeAdCallback
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.LoadAdError
-import com.ltl.apero.languageopen.R
 import com.vio.VioLFO
 import com.vio.BaseLFOFragment
+import com.vio.languageopen.R
 import com.vio.listener.LFOSelectLanguage
 import com.vio.model.Language
 import com.vio.utils.LFONativeUtils

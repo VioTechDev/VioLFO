@@ -13,9 +13,9 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.ltl.apero.languageopen.R
-import com.ltl.apero.languageopen.databinding.FragmentLfoBinding
 import com.vio.adapter.LFOAdapter
+import com.vio.languageopen.R
+import com.vio.languageopen.databinding.FragmentLfoBinding
 import com.vio.model.Language
 import com.vio.utils.LfoConstants
 

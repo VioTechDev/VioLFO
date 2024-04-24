@@ -8,8 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
-import com.ltl.apero.languageopen.R
 import com.vio.VioLFO
+import com.vio.languageopen.R
 import com.vio.listener.LFOSelectLanguage
 import com.vio.model.Language
 

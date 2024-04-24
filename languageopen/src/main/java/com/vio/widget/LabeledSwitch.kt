@@ -12,7 +12,7 @@ import android.os.Build
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.animation.AccelerateDecelerateInterpolator
-import com.ltl.apero.languageopen.R
+import com.vio.languageopen.R
 import com.vio.model.ToggleableView
 
 /**

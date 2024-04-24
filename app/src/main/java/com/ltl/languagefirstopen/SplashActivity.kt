@@ -1,4 +1,4 @@
-package com.ltl.aperolanguagefirstopen
+package com.ltl.languagefirstopen
 
 import android.os.Bundle
 import android.util.Log
@@ -24,45 +24,45 @@ class SplashActivity : AppCompatActivity(), LFOCallBack {
         languages.add(
             Language(
                 "en",
-                getString(com.ltl.apero.languageopen.R.string.language_english),
-                getString(com.ltl.apero.languageopen.R.string.language_english),
-                com.ltl.apero.languageopen.R.drawable.ic_language_en,
+                getString(com.vio.languageopen.R.string.language_english),
+                getString(com.vio.languageopen.R.string.language_english),
+                com.vio.languageopen.R.drawable.ic_language_en,
                 false
             )
         )
         languages.add(
             Language(
                 "es",
-                getString(com.ltl.apero.languageopen.R.string.language_spanish),
-                getString(com.ltl.apero.languageopen.R.string.language_spanish),
-                com.ltl.apero.languageopen.R.drawable.ic_language_es,
+                getString(com.vio.languageopen.R.string.language_spanish),
+                getString(com.vio.languageopen.R.string.language_spanish),
+                com.vio.languageopen.R.drawable.ic_language_es,
                 false
             )
         )
         languages.add(
             Language(
                 "pt",
-                getString(com.ltl.apero.languageopen.R.string.language_portuguese),
-                getString(com.ltl.apero.languageopen.R.string.language_portuguese),
-                com.ltl.apero.languageopen.R.drawable.ic_language_pt,
+                getString(com.vio.languageopen.R.string.language_portuguese),
+                getString(com.vio.languageopen.R.string.language_portuguese),
+                com.vio.languageopen.R.drawable.ic_language_pt,
                 false
             )
         )
         languages.add(
             Language(
                 "hi",
-                getString(com.ltl.apero.languageopen.R.string.language_hindi),
-                getString(com.ltl.apero.languageopen.R.string.language_hindi),
-                com.ltl.apero.languageopen.R.drawable.ic_language_hi,
+                getString(com.vio.languageopen.R.string.language_hindi),
+                getString(com.vio.languageopen.R.string.language_hindi),
+                com.vio.languageopen.R.drawable.ic_language_hi,
                 false
             )
         )
         languages.add(
             Language(
                 "id",
-                getString(com.ltl.apero.languageopen.R.string.language_indo),
-                getString(com.ltl.apero.languageopen.R.string.language_indo),
-                com.ltl.apero.languageopen.R.drawable.ic_language_indo,
+                getString(com.vio.languageopen.R.string.language_indo),
+                getString(com.vio.languageopen.R.string.language_indo),
+                com.vio.languageopen.R.drawable.ic_language_indo,
                 false
             )
         )
@@ -72,7 +72,7 @@ class SplashActivity : AppCompatActivity(), LFOCallBack {
                 "vi",
                 "Viet nam",
                 "Viet nam",
-                com.ltl.apero.languageopen.R.drawable.ic_language_ru,
+                com.vio.languageopen.R.drawable.ic_language_ru,
                 false
             )
         )
@@ -81,10 +81,10 @@ class SplashActivity : AppCompatActivity(), LFOCallBack {
             isShowNativeLFO1 = true,
             listLanguage = languages
         )
-            .layoutToolbar(com.ltl.apero.languageopen.R.layout.layout_header_1)
+            .layoutToolbar(com.vio.languageopen.R.layout.layout_header_1)
             .layoutNativeAd(R.layout.native_language_test)
             .shimmerNativeAd(R.layout.shimmer_native_language_test)
-            .layoutItemLanguage(com.ltl.apero.languageopen.R.layout.view_item_language_lfo_border)
+            .layoutItemLanguage(com.vio.languageopen.R.layout.view_item_language_lfo_border)
             .showLFO2(true)
             .showMeta(true)
             .showMetaAllPlatform(true)
