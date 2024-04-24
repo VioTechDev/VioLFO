@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="language_english">English</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_japan">日本</string>
+    <string name="language_korean">한국인</string>
+    <string name="language_french">La France</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_malaysia">Malaysia</string>
+    <string name="language_filipina">Filipina</string>
+    <string name="language_indo">Bahasa Indonesia</string>
+    <string name="language_nederlands">Nederlands</string>
+    <string name="language_china">中国人</string>
+    <string name="language_italia">Italiano</string>
+    <string name="language_rusian">Русский</string>
+
+    <string name="select_language_on_each_access">Sélectionner la langue à chaque accès.</string>
+    <string name="next">Next</string>
+    <string name="languages">Languages</string>
+</resources>
