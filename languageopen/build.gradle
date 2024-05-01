@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
-    id 'maven-publish'
 }
 
 android {
@@ -39,34 +38,6 @@ android {
 
 }
 
-publishing {
-    publications {
-        aar(MavenPublication) {
-            artifactId "language.first.open"
-            artifact "${project.buildDir}/outputs/aar/languageopen-release.aar"
-
-            //The publication doesn't know about our dependencies, so we have to manually add them to the pom
-            pom {
-                // Old artifact coordinates
-                groupId = "apero"
-                artifactId = "language.first.open"
-                version = "2.2.0-alpha04"
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            url 'https://artifactory.apero.vn/artifactory/gradle-release/'
-            credentials {
-                username "deployer"
-                password "apero@123"
-            }
-        }
-    }
-
-}
-
 dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
@@ -80,7 +51,7 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.google.android.gms:play-services-ads:20.4.0'
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation 'com.github.VioTechDev:VioAds:1.0.3'
+    implementation 'com.github.VioTechDev:VioAds:1.0.8'
 
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
     // applovin
