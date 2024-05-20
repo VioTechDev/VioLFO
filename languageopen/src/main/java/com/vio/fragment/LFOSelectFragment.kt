@@ -7,7 +7,9 @@ import androidx.core.view.isVisible
 import com.ads.admob.data.ContentAd
 import com.ads.admob.helper.adnative.NativeAdConfig
 import com.ads.admob.helper.adnative.NativeAdHelper
+import com.ads.admob.helper.adnative.params.AdNativeMediation
 import com.ads.admob.helper.adnative.params.NativeAdParam
+import com.ads.admob.helper.adnative.params.NativeLayoutMediation
 import com.ads.admob.listener.NativeAdCallback
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.LoadAdError
@@ -43,6 +45,14 @@ class LFOSelectFragment : BaseLFOFragment(), LFOSelectLanguage {
             true,
             layoutNativeId
         )
+        if (VioLFO.lfoConfig.isShowMeta && !VioLFO.lfoConfig.isShowMetaAllPlatform) {
+            config.setLayoutMediation(
+                NativeLayoutMediation(
+                    AdNativeMediation.FACEBOOK,
+                    VioLFO.lfoConfig.layoutNativeAdMeta
+                )
+            )
+        }
         return NativeAdHelper(myActivity, this, config).apply {
             if (VioLFO.lfoConfig.requestNativePriorityLFO2) {
                 registerAdListener(object : NativeAdCallback {
