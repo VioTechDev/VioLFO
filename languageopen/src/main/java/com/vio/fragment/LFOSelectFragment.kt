@@ -94,7 +94,13 @@ class LFOSelectFragment : BaseLFOFragment(), LFOSelectLanguage {
     override fun initView() {
         initAdapter()
         arguments?.getInt(LfoConstants.KEY_SELECT_POSITION)?.let {
-            updateUiSelect(lfoAdapter.getListData()[it])
+            if (
+                lfoAdapter.getListData().isNotEmpty()
+                && lfoAdapter.getListData().size > it
+                && it >= 0
+            ) {
+                updateUiSelect(lfoAdapter.getListData()[it])
+            }
         }
     }
 
