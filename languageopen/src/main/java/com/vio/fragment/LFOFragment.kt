@@ -55,12 +55,6 @@ class LFOFragment : BaseLFOFragment(), LFOSelectLanguage {
                     }
 
                     override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                        LFONativeUtils.requestNativeLFO1(
-                            myActivity,
-                            VioLFO.lfoConfig.idNativeLFO1
-                        ) {
-                            VioLFO.lfoConfig.isShowNativeLFO1
-                        }
                     }
 
                     override fun onAdFailedToShow(adError: AdError) {
