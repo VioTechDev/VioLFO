@@ -54,4 +54,6 @@ dependencies {
     // applovin
     implementation 'com.applovin:applovin-sdk:11.4.2'
     implementation 'androidx.work:work-runtime-ktx:2.7.0'
+    implementation 'com.github.VioTechDev:VioAds:2.0.0_max'
+
 }

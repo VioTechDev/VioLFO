@@ -66,7 +66,7 @@ class LFOFragment : BaseLFOFragment(), LFOSelectLanguage {
                     }
 
 
-                    override fun onAdLoaded(data: ContentAd.AdmobAd.ApNativeAd) {
+                    override fun onAdLoaded(data: ContentAd) {
 
                     }
 
@@ -93,7 +93,7 @@ class LFOFragment : BaseLFOFragment(), LFOSelectLanguage {
         nativeAdHelper.setShimmerLayoutView(binding.flShimmerNative.findViewById(R.id.shimmerContainerNative))
         LFONativeUtils.nativeLFO1.observe(viewLifecycleOwner) { nativeAd ->
             if (nativeAd != null) {
-                nativeAdHelper.requestAds(NativeAdParam.Ready(nativeAd.nativeAd))
+                nativeAdHelper.requestAds(NativeAdParam.Ready(nativeAd))
             } else {
                 nativeAdHelper.requestAds(NativeAdParam.Request.create())
             }
