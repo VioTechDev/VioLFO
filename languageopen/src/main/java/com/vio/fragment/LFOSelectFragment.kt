@@ -13,8 +13,8 @@ import com.ads.admob.helper.adnative.params.NativeLayoutMediation
 import com.ads.admob.listener.NativeAdCallback
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.LoadAdError
-import com.vio.VioLFO
 import com.vio.BaseLFOFragment
+import com.vio.VioLFO
 import com.vio.languageopen.R
 import com.vio.listener.LFOSelectLanguage
 import com.vio.model.Language
@@ -34,7 +34,9 @@ class LFOSelectFragment : BaseLFOFragment(), LFOSelectLanguage {
                 VioLFO.lfoConfig.layoutNativeAd
             }
 
-        val idNativeAd = if (VioLFO.lfoConfig.requestNativePriorityLFO2) {
+        val idNativeAd = if (VioLFO.lfoConfig.requestNativePriorityLFO2
+            && VioLFO.lfoConfig.idNativePriorityLFO2.isNotBlank()
+        ) {
             VioLFO.lfoConfig.idNativePriorityLFO2
         } else {
             VioLFO.lfoConfig.idNativeLFO2

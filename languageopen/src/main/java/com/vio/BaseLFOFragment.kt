@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.activity.OnBackPressedCallback
+import androidx.annotation.IdRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.NavGraph
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.vio.adapter.LFOAdapter
@@ -142,14 +145,14 @@ abstract class BaseLFOFragment : Fragment() {
         bundle.putBoolean(LfoConstants.KEY_OPEN_FROM_MAIN, true)
         bundle.putInt(LfoConstants.KEY_SELECT_POSITION, languagePosition)
         bundle.putInt(LfoConstants.KEY_SCROLL_Y, scrollY)
-        findNavController().navigate(R.id.action_LFOFragment_to_LFOSelectFragment, bundle)
+        findNavController().navigateSafe(R.id.action_LFOFragment_to_LFOSelectFragment, bundle)
     }
 
     private fun navigateToAccess() {
         val bundle = Bundle()
         bundle.putBoolean(LfoConstants.KEY_OPEN_FROM_MAIN, true)
         bundle.putInt(LfoConstants.KEY_SELECT_POSITION, 1)
-        findNavController().navigate(R.id.action_LFOFragment_to_LFOAccessFragment, bundle)
+        findNavController().navigateSafe(R.id.action_LFOFragment_to_LFOAccessFragment, bundle)
     }
 
     private fun chooseLanguage(language: Language) {
@@ -166,5 +169,22 @@ abstract class BaseLFOFragment : Fragment() {
                     myActivity.finish()
                 }
             })
+    }
+
+    fun NavController.navigateSafe(@IdRes resId: Int, args: Bundle? = null) {
+        val destinationId = currentDestination?.getAction(resId)?.destinationId.orEmpty()
+        currentDestination?.let { node ->
+            val currentNode = when (node) {
+                is NavGraph -> node
+                else -> node.parent
+            }
+            if (destinationId != 0) {
+                currentNode?.findNode(destinationId)?.let { navigate(resId, args) }
+            }
+        }
+    }
+
+    private fun Int?.orEmpty(default: Int = 0): Int {
+        return this ?: default
     }
 }

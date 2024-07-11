@@ -2,6 +2,7 @@ package com.vio
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import com.vio.extention.getHandleListLanguage
 import com.vio.languageopen.R
 import com.vio.listener.LFOCallBack
@@ -85,7 +86,7 @@ object VioLFO {
                 lfoConfig.languageCodeDefault,
                 lfoConfig.positionLanguageDevice
             )
-        if (lfoConfig.requestNativePriorityLFO1) {
+        if (lfoConfig.requestNativePriorityLFO1 && lfoConfig.idNativePriorityLFO1.isNotBlank()) {
             LFONativeUtils.requestLFO1Alternate(
                 context,
                 lfoConfig.idNativePriorityLFO1,

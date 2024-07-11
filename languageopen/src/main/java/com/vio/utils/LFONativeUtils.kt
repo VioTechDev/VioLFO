@@ -29,6 +29,7 @@ internal object LFONativeUtils {
 
                 override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                     nativeLFO1.postValue(null)
+                    Log.e(TAG, "requestNativeLFO1: onAdFailedToLoad", )
                 }
 
                 override fun onAdFailedToShow(adError: AdError) {
@@ -38,6 +39,7 @@ internal object LFONativeUtils {
                 }
 
                 override fun onAdLoaded(data: ContentAd.AdmobAd.ApNativeAd) {
+                    Log.d(TAG, "requestNativeLFO1 :onAdLoaded", )
                     nativeLFO1.postValue(data)
                 }
 
@@ -64,6 +66,7 @@ internal object LFONativeUtils {
 
                 override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                     nativeLFO2.postValue(null)
+                    Log.e(TAG, "requestNativeLFO3 :onAdFailedToLoad", )
                 }
 
                 override fun onAdFailedToShow(adError: AdError) {
@@ -73,6 +76,7 @@ internal object LFONativeUtils {
                 }
 
                 override fun onAdLoaded(data: ContentAd.AdmobAd.ApNativeAd) {
+                    Log.d(TAG, "requestNativeLFO2 :onAdLoaded", )
                     nativeLFO2.postValue(data)
                 }
 
@@ -94,6 +98,7 @@ internal object LFONativeUtils {
         requestValid: () -> Boolean
     ) {
         if (requestValid()) {
+            Log.d(TAG, "requestLFO1Alternate ")
             requestNativeAlternate(
                 context,
                 idAdPriorityAd,
@@ -117,6 +122,7 @@ internal object LFONativeUtils {
                         }
                 })
         } else {
+            Log.e(TAG, "requestLFO1Alternate: invalid")
             nativeLFO1.postValue(null)
         }
     }
@@ -129,6 +135,7 @@ internal object LFONativeUtils {
         requestValid: () -> Boolean
     ) {
         if (requestValid()) {
+            Log.d(TAG, "requestLFO2Alternate ")
             requestNativeAlternate(
                 context,
                 idAdPriorityAd,
@@ -151,6 +158,7 @@ internal object LFONativeUtils {
                         }
                 })
         } else {
+            Log.e(TAG, "requestLFO2Alternate: invalid")
             nativeLFO2.postValue(null)
         }
     }

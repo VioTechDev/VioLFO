@@ -3,10 +3,13 @@ package com.ltl.languagefirstopen
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.vio.VioLFO
 import com.vio.LFOConfig
 import com.vio.listener.LFOCallBack
 import com.vio.model.Language
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashActivity : AppCompatActivity(), LFOCallBack {
     companion object {
@@ -17,6 +20,10 @@ class SplashActivity : AppCompatActivity(), LFOCallBack {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         initLFO()
+        lifecycleScope.launch {
+            delay(5000)
+            VioLFO.requestLFO(this@SplashActivity)
+        }
     }
 
     private fun initLFO() {
@@ -96,12 +103,11 @@ class SplashActivity : AppCompatActivity(), LFOCallBack {
             .colorStatusBar(R.color.purple_500)
             .setLightStatusBar(true)
             .backgroundColorLfo(R.color.black)
-            .requestNativePriorityLFO1(true, "ca-app-pub-3940256099942544/10449601153")
-            .requestNativePriorityLFO2(true, "ca-app-pub-3940256099942544/1044960115")
+            .requestNativePriorityLFO1(true, "")
+            .requestNativePriorityLFO2(true, "")
             .build()
         VioLFO.initLFO(this, lfoConfig)
         VioLFO.registerAdListener(this)
-        VioLFO.requestLFO(this@SplashActivity)
     }
 
     override fun onChangeLanguage(language: Language?) {
