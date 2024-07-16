@@ -51,7 +51,7 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.google.android.gms:play-services-ads:20.4.0'
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation 'com.github.VioTechDev:VioAds:1.0.16'
+    implementation 'com.github.VioTechDev:VioAds:3.0.0-alpha01'
 
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
     // applovin
