@@ -107,6 +107,7 @@ abstract class BaseLFOFragment : Fragment() {
         }
         toolBarView.findViewById<View>(R.id.imgBack).setOnClickListener {
             myActivity.finish()
+            VioLFO.invokeListenerAdCallback().onBackPressLanguage()
         }
     }
 
