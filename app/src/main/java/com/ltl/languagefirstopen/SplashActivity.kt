@@ -94,6 +94,7 @@ class SplashActivity : AppCompatActivity(), LFOCallBack {
             .positionLanguageDevice(3)
             .itemLimit(6)
             .colorStatusBar(R.color.purple_500)
+            .languageCodeDefault("")
             .setLightStatusBar(true)
             .backgroundColorLfo(R.color.black)
             .requestNativePriorityLFO1(true, "ca-app-pub-3940256099942544/10449601153")

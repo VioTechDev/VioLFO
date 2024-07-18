@@ -105,6 +105,8 @@ abstract class BaseLFOFragment : Fragment() {
         toolBarView.findViewById<View>(R.id.imgBack).setOnClickListener {
             myActivity.finish()
         }
+        toolBarView.findViewById<View>(R.id.imgChooseLanguage).isEnabled =
+            lfoAdapter.getLanguageSelected() != null
     }
 
     private fun setupShimmerAd() {
