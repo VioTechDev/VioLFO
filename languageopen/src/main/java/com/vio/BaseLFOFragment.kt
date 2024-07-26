@@ -11,9 +11,12 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.vio.adapter.LFOAdapter
+import com.vio.fragment.LFOFragment
+import com.vio.fragment.LFOSelectFragment
 import com.vio.languageopen.R
 import com.vio.languageopen.databinding.FragmentLfoBinding
 import com.vio.model.Language
@@ -103,6 +106,7 @@ abstract class BaseLFOFragment : Fragment() {
             lfoAdapter.getLanguageSelected()?.let { it1 -> chooseLanguage(it1) }
         }
         toolBarView.findViewById<View>(R.id.imgBack).setOnClickListener {
+            VioLFO.invokeListenerAdCallback().onBackPressLanguage()
             myActivity.finish()
         }
     }
@@ -142,14 +146,22 @@ abstract class BaseLFOFragment : Fragment() {
         bundle.putBoolean(LfoConstants.KEY_OPEN_FROM_MAIN, true)
         bundle.putInt(LfoConstants.KEY_SELECT_POSITION, languagePosition)
         bundle.putInt(LfoConstants.KEY_SCROLL_Y, scrollY)
-        findNavController().navigate(R.id.action_LFOFragment_to_LFOSelectFragment, bundle)
+        findNavControllerSafely(R.id.LFOFragment)?.navigate(R.id.action_LFOFragment_to_LFOSelectFragment, bundle)
     }
 
     private fun navigateToAccess() {
         val bundle = Bundle()
         bundle.putBoolean(LfoConstants.KEY_OPEN_FROM_MAIN, true)
         bundle.putInt(LfoConstants.KEY_SELECT_POSITION, 1)
-        findNavController().navigate(R.id.action_LFOFragment_to_LFOAccessFragment, bundle)
+            when(this){
+                is LFOFragment -> {
+                    findNavControllerSafely(R.id.LFOFragment)?.navigate(R.id.action_LFOFragment_to_LFOAccessFragment, bundle)
+                }
+                is LFOSelectFragment -> {
+                    findNavControllerSafely(R.id.LFOSelectFragment)?.navigate(R.id.action_LFOFragment_to_LFOAccessFragment, bundle)
+
+                }
+            }
     }
 
     private fun chooseLanguage(language: Language) {
@@ -166,5 +178,13 @@ abstract class BaseLFOFragment : Fragment() {
                     myActivity.finish()
                 }
             })
+    }
+
+    private fun Fragment.findNavControllerSafely(id: Int): NavController? {
+        return if (findNavController().currentDestination?.id == id) {
+            findNavController()
+        } else {
+            null
+        }
     }
 }
