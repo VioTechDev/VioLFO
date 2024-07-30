@@ -14,8 +14,8 @@ import com.vio.VioLFO
 
 internal object LFONativeUtils {
     private val TAG = LFONativeUtils::class.simpleName
-    var nativeLFO1: MutableLiveData<ContentAd.AdmobAd.ApNativeAd> = MutableLiveData()
-    var nativeLFO2: MutableLiveData<ContentAd.AdmobAd.ApNativeAd> = MutableLiveData()
+    var nativeLFO1: MutableLiveData<ContentAd> = MutableLiveData()
+    var nativeLFO2: MutableLiveData<ContentAd> = MutableLiveData()
     fun requestNativeLFO1(
         context: Context,
         idAd: String,
@@ -23,7 +23,7 @@ internal object LFONativeUtils {
     ) {
         if (requestValid()) {
             Log.d(TAG, "requestNativeLFO1 ")
-            AdmobFactory.getInstance().requestNativeAd(context, idAd, object : NativeAdCallback {
+            AdmobFactory.INSTANCE.requestNativeAd(context, idAd, object : NativeAdCallback {
                 override fun onAdClicked() {
                 }
 
@@ -38,7 +38,7 @@ internal object LFONativeUtils {
                 override fun onAdImpression() {
                 }
 
-                override fun onAdLoaded(data: ContentAd.AdmobAd.ApNativeAd) {
+                override fun onAdLoaded(data: ContentAd) {
                     Log.d(TAG, "requestNativeLFO1 :onAdLoaded", )
                     nativeLFO1.postValue(data)
                 }
@@ -60,7 +60,7 @@ internal object LFONativeUtils {
     ) {
         if (requestValid()) {
             Log.d(TAG, "requestNativeLFO2 ")
-            AdmobFactory.getInstance().requestNativeAd(context, idAd, object : NativeAdCallback {
+            AdmobFactory.INSTANCE.requestNativeAd(context, idAd, object : NativeAdCallback {
                 override fun onAdClicked() {
                 }
 
@@ -75,7 +75,7 @@ internal object LFONativeUtils {
                 override fun onAdImpression() {
                 }
 
-                override fun onAdLoaded(data: ContentAd.AdmobAd.ApNativeAd) {
+                override fun onAdLoaded(data: ContentAd) {
                     Log.d(TAG, "requestNativeLFO2 :onAdLoaded", )
                     nativeLFO2.postValue(data)
                 }
@@ -168,7 +168,7 @@ internal object LFONativeUtils {
         idAdPriorityAd: String,
         idAdAllPrice: String,
         @LayoutRes layoutNativeAd: Int,
-        onAdLoaded: (ContentAd.AdmobAd.ApNativeAd) -> Unit,
+        onAdLoaded: (ContentAd) -> Unit,
         onFailedToLoad: () -> Unit,
         onAdImpression: () -> Unit = {},
         onClick: () -> Unit
@@ -207,12 +207,12 @@ internal object LFONativeUtils {
         context: Context,
         idAd: String,
         @LayoutRes layoutNativeAd: Int,
-        onAdLoaded: (ContentAd.AdmobAd.ApNativeAd) -> Unit,
+        onAdLoaded: (ContentAd) -> Unit,
         onFailedToLoad: () -> Unit,
         onAdImpression: () -> Unit = {},
         onClick: () -> Unit
     ) {
-        AdmobFactory.getInstance().requestNativeAd(context, idAd, object : NativeAdCallback {
+        AdmobFactory.INSTANCE.requestNativeAd(context, idAd, object : NativeAdCallback {
             override fun onAdClicked() {
                 onClick()
             }
@@ -228,7 +228,7 @@ internal object LFONativeUtils {
                 onAdImpression()
             }
 
-            override fun onAdLoaded(data: ContentAd.AdmobAd.ApNativeAd) {
+            override fun onAdLoaded(data: ContentAd) {
                 onAdLoaded(data)
             }
 

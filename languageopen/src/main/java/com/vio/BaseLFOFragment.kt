@@ -106,7 +106,9 @@ abstract class BaseLFOFragment : Fragment() {
             lfoAdapter.getLanguageSelected()?.let { it1 -> chooseLanguage(it1) }
         }
         toolBarView.findViewById<View>(R.id.imgBack).setOnClickListener {
-            myActivity.finish()
+            if (VioLFO.lfoConfig.finishActivityWhenBackAction){
+                myActivity.finish()
+            }
             VioLFO.invokeListenerAdCallback().onBackPressLanguage()
         }
     }
@@ -167,7 +169,9 @@ abstract class BaseLFOFragment : Fragment() {
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     VioLFO.invokeListenerAdCallback().onBackPressLanguage()
-                    myActivity.finish()
+                    if (VioLFO.lfoConfig.finishActivityWhenBackAction){
+                        myActivity.finish()
+                    }
                 }
             })
     }

@@ -32,6 +32,7 @@ class LFOConfig private constructor(
     val lfo2NativeAdClickEventName: String = "",
     val requestNativePriorityLFO1: Boolean = false,
     val requestNativePriorityLFO2: Boolean = false,
+    val finishActivityWhenBackAction: Boolean = true,
 ) {
     class Builder(
         private var idNativeLFO1: String,
@@ -61,6 +62,7 @@ class LFOConfig private constructor(
         private var lfo2NativeAdClickEventName: String = "",
         private var requestNativePriorityLFO1: Boolean = false,
         private var requestNativePriorityLFO2: Boolean = false,
+        private var finishActivityWhenBackAction: Boolean = true,
     ) {
         /**
          * Used to change the toolbar interface
@@ -302,6 +304,8 @@ class LFOConfig private constructor(
             idNativePriorityLFO2(idNativePriority)
             this.requestNativePriorityLFO2 = requestPriority
         }
+        fun finishActivityWhenBackAction(isFinish: Boolean) =
+            apply { this.finishActivityWhenBackAction = isFinish }
 
         fun build() = LFOConfig(
             idNativeLFO1,
@@ -330,7 +334,8 @@ class LFOConfig private constructor(
             lfo1NativeAdClickEventName,
             lfo2NativeAdClickEventName,
             requestNativePriorityLFO1,
-            requestNativePriorityLFO2
+            requestNativePriorityLFO2,
+            finishActivityWhenBackAction
         )
     }
 }

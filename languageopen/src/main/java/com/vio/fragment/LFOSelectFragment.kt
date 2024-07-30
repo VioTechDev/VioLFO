@@ -22,7 +22,7 @@ import com.vio.utils.LFONativeUtils
 import com.vio.utils.LfoConstants
 
 class LFOSelectFragment : BaseLFOFragment(), LFOSelectLanguage {
-
+    private val TAG = LFOSelectLanguage::class.simpleName
     private val nativeAdHelper by lazy { initNativeAd() }
     private val canShow = VioLFO.lfoConfig.isShowNativeLFO1 && VioLFO.lfoConfig.showLFO2
 
@@ -74,7 +74,7 @@ class LFOSelectFragment : BaseLFOFragment(), LFOSelectLanguage {
                     }
 
 
-                    override fun onAdLoaded(data: ContentAd.AdmobAd.ApNativeAd) {
+                    override fun onAdLoaded(data: ContentAd) {
 
                     }
 
@@ -103,7 +103,6 @@ class LFOSelectFragment : BaseLFOFragment(), LFOSelectLanguage {
     override fun onResume() {
         super.onResume()
         val scrollY = arguments?.getInt(LfoConstants.KEY_SCROLL_Y) ?: 0
-        Log.d("TAG", "onresume() called, $scrollY")
         binding.recyclerView.post {
             binding.recyclerView.scrollBy(0, scrollY)
         }
@@ -139,8 +138,13 @@ class LFOSelectFragment : BaseLFOFragment(), LFOSelectLanguage {
         nativeAdHelper.setShimmerLayoutView(binding.flShimmerNative.findViewById(R.id.shimmerContainerNative))
         LFONativeUtils.nativeLFO2.observe(viewLifecycleOwner) { nativeAd ->
             if (nativeAd != null) {
-                nativeAdHelper.requestAds(NativeAdParam.Ready(nativeAd.nativeAd))
+                Log.d(TAG, "setupNativeAd: preload native success")
+                nativeAdHelper.requestAds(NativeAdParam.Ready(nativeAd))
             } else {
+                LFONativeUtils.nativeLFO1.value?.let {
+                    Log.e(TAG, "setupNativeAd: using native lfo 1", )
+                    nativeAdHelper.requestAds(NativeAdParam.Ready(it))
+                }
                 nativeAdHelper.requestAds(NativeAdParam.Request.create())
             }
         }
