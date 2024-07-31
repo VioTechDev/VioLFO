@@ -99,6 +99,7 @@ class SplashActivity : AppCompatActivity(), LFOCallBack {
             .shimmerNativeAdMeta(R.layout.shimmer_native_meta)
             .idNativeLFO2("ca-app-pub-3940256099942544/2247696110321")
             .positionLanguageDevice(3)
+            .languageCodeDefault("en")
             .itemLimit(6)
             .colorStatusBar(R.color.purple_500)
             .setLightStatusBar(true)

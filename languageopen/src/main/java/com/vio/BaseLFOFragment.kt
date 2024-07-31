@@ -102,6 +102,7 @@ abstract class BaseLFOFragment : Fragment() {
         )
         toolBarView.layoutParams = toolbarParams
         binding.flToolbar.addView(toolBarView)
+        toolBarView.findViewById<View>(R.id.imgChooseLanguage).isEnabled = lfoAdapter.getLanguageSelected() != null
         toolBarView.findViewById<View>(R.id.imgChooseLanguage).setOnClickListener {
             lfoAdapter.getLanguageSelected()?.let { it1 -> chooseLanguage(it1) }
         }
