@@ -17,6 +17,7 @@ import androidx.navigation.NavGraph
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.vio.adapter.LFOAdapter
+import com.vio.fragment.LFOSelectFragment
 import com.vio.languageopen.R
 import com.vio.languageopen.databinding.FragmentLfoBinding
 import com.vio.model.Language
@@ -39,6 +40,8 @@ abstract class BaseLFOFragment : Fragment() {
     private fun init() {
         binding = FragmentLfoBinding.inflate(layoutInflater)
     }
+
+    private var  toolBarView: View? = null
 
 
     protected abstract fun initView()
@@ -89,7 +92,7 @@ abstract class BaseLFOFragment : Fragment() {
     }
 
     private fun setupToolBar() {
-        val toolBarView = VioLFO.lfoConfig.layoutToolbar.let { layout ->
+        toolBarView = VioLFO.lfoConfig.layoutToolbar.let { layout ->
             LayoutInflater.from(myContext)
                 .inflate(layout, binding.flToolbar, false)
         } ?: run {
@@ -100,13 +103,13 @@ abstract class BaseLFOFragment : Fragment() {
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
-        toolBarView.layoutParams = toolbarParams
+        toolBarView?.layoutParams = toolbarParams
         binding.flToolbar.addView(toolBarView)
-        toolBarView.findViewById<View>(R.id.imgChooseLanguage).isEnabled = lfoAdapter.getLanguageSelected() != null
-        toolBarView.findViewById<View>(R.id.imgChooseLanguage).setOnClickListener {
+        toolBarView?.findViewById<View>(R.id.imgChooseLanguage)?.isEnabled = lfoAdapter.getLanguageSelected() != null || this is LFOSelectFragment
+        toolBarView?.findViewById<View>(R.id.imgChooseLanguage)?.setOnClickListener {
             lfoAdapter.getLanguageSelected()?.let { it1 -> chooseLanguage(it1) }
         }
-        toolBarView.findViewById<View>(R.id.imgBack).setOnClickListener {
+        toolBarView?.findViewById<View>(R.id.imgBack)?.setOnClickListener {
             if (VioLFO.lfoConfig.finishActivityWhenBackAction){
                 myActivity.finish()
             }
@@ -145,6 +148,7 @@ abstract class BaseLFOFragment : Fragment() {
     }
 
     protected fun navigateToSelect(languagePosition: Int, scrollY: Int) {
+        toolBarView?.findViewById<View>(R.id.imgChooseLanguage)?.isEnabled = true
         val bundle = Bundle()
         bundle.putBoolean(LfoConstants.KEY_OPEN_FROM_MAIN, true)
         bundle.putInt(LfoConstants.KEY_SELECT_POSITION, languagePosition)
@@ -177,7 +181,7 @@ abstract class BaseLFOFragment : Fragment() {
             })
     }
 
-    fun NavController.navigateSafe(@IdRes resId: Int, args: Bundle? = null) {
+    private fun NavController.navigateSafe(@IdRes resId: Int, args: Bundle? = null) {
         val destinationId = currentDestination?.getAction(resId)?.destinationId.orEmpty()
         currentDestination?.let { node ->
             val currentNode = when (node) {
